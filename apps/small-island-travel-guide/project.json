@@ -1,0 +1,65 @@
+{
+  "name": "small-island-travel-guide",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/small-island-travel-guide",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/small-island-travel-guide",
+        "outputPath": "dist/apps/small-island-travel-guide"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/small-island-travel-guide"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "small-island-travel-guide:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "small-island-travel-guide:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "small-island-travel-guide:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "small-island-travel-guide:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/small-island-travel-guide"],
+      "options": {
+        "jestConfig": "apps/small-island-travel-guide/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/small-island-travel-guide/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
