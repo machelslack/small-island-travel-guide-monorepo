@@ -2,9 +2,12 @@
   "name": "small-island-travel-guide-api-interface",
   "version": "1.0.0",
   "description": "travel app api interface",
-  "main": "index.js",
+  "type": "module",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node src/app/index.js --trace-warnings",
+    "build:dev": "rm -rf lib && tsc --watch",
+    "start": "node src/app/index.ts --trace-warnings",
+    "start:availability": "API=availabilty node --experimental-json-modules lib/app/index.js --trace-warnings",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +19,11 @@
     "@graphql-tools/schema": "^9.0.4",
     "@graphql-yoga/node": "^2.13.13",
     "apollo-server": "^3.10.3",
-    "graphql": "^16.6.0"
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "url": "^0.11.0"
   }
 }
