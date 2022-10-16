@@ -1,0 +1,21 @@
+{
+  "name": "small-island-travel-guide-api-interface",
+  "version": "1.0.0",
+  "description": "travel app api interface",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app/index.js --trace-warnings",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^7.5.5",
+    "@graphql-tools/load": "^7.7.7",
+    "@graphql-tools/load-files": "^6.6.1",
+    "@graphql-tools/schema": "^9.0.4",
+    "@graphql-yoga/node": "^2.13.13",
+    "apollo-server": "^3.10.3",
+    "graphql": "^16.6.0"
+  }
+}

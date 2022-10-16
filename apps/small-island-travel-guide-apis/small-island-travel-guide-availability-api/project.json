@@ -1,0 +1,66 @@
+{
+  "name": "small-island-travel-guide-apis-small-island-travel-guide-availability-api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api",
+        "main": "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/src/main.ts",
+        "tsConfig": "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/tsconfig.app.json",
+        "assets": [
+          "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/src/assets"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/src/environments/environment.ts",
+              "with": "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "small-island-travel-guide-apis-small-island-travel-guide-availability-api:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "small-island-travel-guide-apis-small-island-travel-guide-availability-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api"
+      ],
+      "options": {
+        "jestConfig": "apps/small-island-travel-guide-apis/small-island-travel-guide-availability-api/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
