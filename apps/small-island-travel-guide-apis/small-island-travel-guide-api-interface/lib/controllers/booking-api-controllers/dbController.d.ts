@@ -52,5 +52,8 @@ declare const db: {
         startDate: string;
         endDate: string;
     }[];
+    createNewBooking: () => void;
+    updateExistingBooking: () => void;
+    deleteExistingBooking: () => void;
 };
 export default db;

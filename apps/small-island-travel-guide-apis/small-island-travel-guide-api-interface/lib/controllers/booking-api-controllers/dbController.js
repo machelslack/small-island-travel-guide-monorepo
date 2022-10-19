@@ -7,6 +7,9 @@ const db = {
     getBookingsByHost: (hostId) => data.bookings,
     getBookingByListingByDates: ({ listingId, startDate, endDate }) => data.bookings,
     getBookingsByHostByDates: ({ hostId, startDate, endDate }) => data.bookings,
+    createNewBooking: () => { },
+    updateExistingBooking: () => { },
+    deleteExistingBooking: () => { },
 };
 export default db;
 //# sourceMappingURL=dbController.js.map

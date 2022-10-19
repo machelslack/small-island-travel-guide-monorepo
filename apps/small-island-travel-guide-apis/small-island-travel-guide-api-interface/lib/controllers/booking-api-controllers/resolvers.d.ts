@@ -8,5 +8,10 @@ declare const resolvers: {
         allBookingsByHost: (root: any, args: any, context: any) => any;
         allBookingsByHostBetweenDates: (root: any, args: any, context: any) => any;
     };
+    Mutation: {
+        newBooking: (root: any, args: any, context: any) => any;
+        changedBooking: (root: any, args: any, context: any) => any;
+        deleteBooking: (root: any, args: any, context: any) => any;
+    };
 };
 export default resolvers;

@@ -22,6 +22,11 @@ const resolvers = {
       return context.db.getBookingsByHostByDates();
     },
   },
+  Mutation: {
+    newBooking: (root, args, context) => { return context.db.createNewBooking();},
+    changedBooking: (root, args, context) => { return context.db.updateExistingBooking();},
+    deleteBooking: (root, args, context) => { return context.db.deleteExistingBooking();},
+  }
 };
 
 export default resolvers;

@@ -36,12 +36,12 @@ const typeDefs = gql `
   }
 
   type Mutation {
-    addNewBooking(
+    newBooking(
       fromDate: String
       endDate: String
       listingID: ID!
     ): BookingUpdateResponse!
-    updateNewBooking(
+    changedBooking(
       fromDate: String
       endDate: String
       listingID: ID!
