@@ -8,6 +8,7 @@
     "build:dev": "rm -rf lib && tsc --watch",
     "start": "node src/app/index.ts --trace-warnings",
     "start:availability": "API=availabilty node --experimental-json-modules lib/app/index.js --trace-warnings",
+    "start:booking": "API=booking node --experimental-json-modules lib/app/index.js --trace-warnings",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

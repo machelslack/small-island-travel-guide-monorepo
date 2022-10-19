@@ -25,6 +25,7 @@ const typeDefs = gql`
     description: String
     type: ListingType
     bookings: [Booking]
+    rate: Int!
   }
 
   type Booking {

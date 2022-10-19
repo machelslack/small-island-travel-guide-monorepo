@@ -1,0 +1,16 @@
+{
+    "bookings": [
+        {
+            "id": "booking-1.0.0",
+            "listingId": ["listing-1.0.0"],
+            "startDate": "2012-12-13T00:00:00.000Z",
+            "endDate": "2012-12-16T00:00:00.000Z"
+        },
+        {
+            "id": "booking-1.1.0",
+            "listingId": ["listing-1.0.0"],
+            "startDate": "2012-07-13T00:00:00.000Z",
+            "endDate": "2012-14-16T00:00:00.000Z"
+        }
+    ]
+}

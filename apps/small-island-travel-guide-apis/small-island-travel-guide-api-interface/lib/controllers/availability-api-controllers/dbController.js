@@ -1,23 +1,4 @@
-// import fs from 'fs';
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// console.log(`😍`, __filename);
-// const json: any = fs.readFileSync(
-//   path.join(
-//     path.dirname(__filename),
-//     ''
-//   )
-// );
 import data from '../../store/availability-api-store/data.json';
-/**
- * Fetch a list of all blocked dates for all hosts' listings
- * Fetch a list of all blocked dates for all hosts' listings within a specfic period
- * Fetch a list of all blocked dates for a specific host's listings
- * Fetch a list of all blocked dates for a specific host's listings within a specfic period
- * Fetch a list of all blocked dates for a specific host's specific listing
- * Fetch a list of all blocked dates for a specific host's specific listing within a specfic period
- */
 const getBookings = ({ bookings, listingID }) => bookings.filter((booking) => booking.listingId.includes(listingID));
 const getListings = ({ host, listings, bookings }) => {
     return listings
