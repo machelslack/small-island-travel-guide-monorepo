@@ -9,9 +9,27 @@ const db = {
   getBookingByListingByDates: ({ listingId, startDate, endDate }) =>
     data.bookings,
   getBookingsByHostByDates: ({ hostId, startDate, endDate }) => data.bookings,
-  createNewBooking: () => {},
-  updateExistingBooking: () => {},
-  deleteExistingBooking: () => {},
+  createNewBooking: () => {
+    return {
+      success: '',
+      message: '',
+      bookings: [],
+    };
+  },
+  updateExistingBooking: () => {
+    return {
+      success: '',
+      message: '',
+      bookings: [],
+    };
+  },
+  deleteExistingBooking: () => {
+    return {
+      success: '',
+      message: '',
+      bookings: [],
+    };
+  },
 };
 
 export default db;

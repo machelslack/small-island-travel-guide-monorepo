@@ -20,5 +20,17 @@
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "node_modules",
+    "lib",
+    "dist",
+    "stories",
+    "**/**/**/*.stories.tsx",
+    "**/**/*.stories.tsx",
+    "**.test.ts",
+    "**.test.tsx",
+    "**.js"
+  ]
 }

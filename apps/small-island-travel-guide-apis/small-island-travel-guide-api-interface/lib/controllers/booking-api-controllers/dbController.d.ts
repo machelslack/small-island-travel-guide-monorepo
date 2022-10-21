@@ -52,8 +52,20 @@ declare const db: {
         startDate: string;
         endDate: string;
     }[];
-    createNewBooking: () => void;
-    updateExistingBooking: () => void;
-    deleteExistingBooking: () => void;
+    createNewBooking: () => {
+        success: string;
+        message: string;
+        bookings: never[];
+    };
+    updateExistingBooking: () => {
+        success: string;
+        message: string;
+        bookings: never[];
+    };
+    deleteExistingBooking: () => {
+        success: string;
+        message: string;
+        bookings: never[];
+    };
 };
 export default db;
