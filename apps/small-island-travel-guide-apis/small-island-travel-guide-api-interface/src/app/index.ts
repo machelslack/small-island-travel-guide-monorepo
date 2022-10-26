@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 import typeDefs from '../model/index.js';
 import controllers from '../controllers/index.js';
+import AvailabilityAPI from '../store/availability-api-store/index.js';
 
 // const { loadSchemaSync } = require('@graphql-tools/load');
 // const { GraphQLFileLoader } = require('@graphql-tools/graphql-file-loader');
@@ -13,6 +14,9 @@ const server = new ApolloServer({
   resolvers: controllers.resolvers[apiToUse],
   typeDefs: typeDefs[apiToUse],
   context: { db: controllers.dbControllers[apiToUse] },
+  dataSources: () => ({
+    availabilityAPI: new AvailabilityAPI(),
+  }),
 });
 
 server.listen().then(({ url }) => {

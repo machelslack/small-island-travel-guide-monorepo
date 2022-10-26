@@ -1,5 +1,7 @@
 const resolvers = {
   Query: {
+    launches: (root, args, context) =>
+      context.dataSources.launchAPI.getAllLaunches(),
     hostsAvailability: (root, args, context) => {
       return context.db.getAllHosts();
     },
