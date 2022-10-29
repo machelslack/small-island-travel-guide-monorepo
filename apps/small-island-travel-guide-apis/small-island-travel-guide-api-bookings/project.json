@@ -1,0 +1,66 @@
+{
+  "name": "small-island-travel-guide-apis-small-island-travel-guide-api-bookings",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings",
+        "main": "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/src/main.ts",
+        "tsConfig": "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/tsconfig.app.json",
+        "assets": [
+          "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/src/assets"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/src/environments/environment.ts",
+              "with": "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "small-island-travel-guide-apis-small-island-travel-guide-api-bookings:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "small-island-travel-guide-apis-small-island-travel-guide-api-bookings:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings"
+      ],
+      "options": {
+        "jestConfig": "apps/small-island-travel-guide-apis/small-island-travel-guide-api-bookings/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

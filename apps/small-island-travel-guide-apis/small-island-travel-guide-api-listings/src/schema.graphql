@@ -1,0 +1,31 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Host @key(fields: "id") {
+  id: ID!
+  listings: [Listing]!
+}
+
+type Listing @key(fields: "id") {
+  id: ID!
+  hostId: ID!
+  name: String
+  description: String
+  type: ListingType
+  rate: Int!
+}
+
+enum ListingType {
+  SINGLEBEDBEDROOM
+  ENSUTIESINGLEBEDBEDROOM
+  DOUBLEBEDBEDROOM
+  ENSUITEDOUBLEBEDBEDROOM
+  TRIPLEBEDBEDROOM
+  ENSUITETRIPLEBEDBEDROOM
+  WHOLEHOUSE
+}
+
+type Query {
+  listings: [Listing!]!
+  listing(id: ID!): Listing
+}

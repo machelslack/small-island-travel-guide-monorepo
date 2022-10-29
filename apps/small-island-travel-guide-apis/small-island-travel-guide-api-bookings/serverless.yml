@@ -1,0 +1,16 @@
+service: apollo-lambda-bookings
+provider:
+  name: aws
+  runtime: nodejs16.x
+  httpApi:
+    cors: true
+functions:
+  graphql:
+    handler: src/server.graphqlHandler 
+    events:
+      - httpApi:
+          path: /
+          method: GET
+# Omit the following lines if you aren't using TS!
+plugins:
+  - serverless-plugin-typescript

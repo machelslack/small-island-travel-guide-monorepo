@@ -1,0 +1,10 @@
+{
+  "httpMethod": "GET",
+  "path": "/",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "requestContext": {},
+  "body": "{\"operationName\": null, \"variables\": null, \"query\": \"query {hello}\"}"
+
+}

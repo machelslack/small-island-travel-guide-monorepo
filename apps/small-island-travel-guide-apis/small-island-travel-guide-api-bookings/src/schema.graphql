@@ -1,0 +1,19 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Listing @key(fields: "id") {
+  id: ID!
+  bookings: [Booking]
+}
+
+type Booking @key(fields: "id") {
+  id: ID!
+  listings: [String]!
+  startDate: String
+  endDate: String
+}
+
+type Query {
+  bookings: [Booking!]!
+  booking: Booking!
+}
