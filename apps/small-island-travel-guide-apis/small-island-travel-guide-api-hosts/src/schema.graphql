@@ -3,7 +3,7 @@ extend schema
 
 type Host @key(fields: "id") {
   id: ID!
-  hostName: String!
+  name: String!
   location: String!
   phone: String
   email: String!

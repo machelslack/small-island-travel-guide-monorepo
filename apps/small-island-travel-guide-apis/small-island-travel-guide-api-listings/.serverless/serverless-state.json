@@ -7,11 +7,11 @@
     "provider": {
       "name": "aws",
       "runtime": "nodejs16.x",
+      "stage": "dev",
+      "region": "eu-west-1",
       "httpApi": {
         "cors": true
       },
-      "stage": "dev",
-      "region": "us-east-1",
       "versionFunctions": true,
       "compiledCloudFormationTemplate": {
         "AWSTemplateFormatVersion": "2010-09-09",
@@ -176,7 +176,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/apollo-lambda-listings/dev/1667071834109-2022-10-29T19:30:34.109Z/apollo-lambda-listings.zip"
+                "S3Key": "serverless/apollo-lambda-listings/dev/1667117552773-2022-10-30T08:12:32.773Z/apollo-lambda-listings.zip"
               },
               "Handler": "src/server.graphqlHandler",
               "Runtime": "nodejs16.x",
@@ -503,7 +503,7 @@
     "artifact": "/Users/mslack/Documents/projects/small-island-travel-guide-monorepo/apps/small-island-travel-guide-apis/small-island-travel-guide-api-listings/.build/.serverless/apollo-lambda-listings.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/apollo-lambda-listings/dev/1667071834109-2022-10-29T19:30:34.109Z",
+    "artifactDirectoryName": "serverless/apollo-lambda-listings/dev/1667117552773-2022-10-30T08:12:32.773Z",
     "artifact": "apollo-lambda-listings.zip"
   }
 }

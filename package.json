@@ -9,11 +9,13 @@
   },
   "private": true,
   "dependencies": {
+    "@apollo/gateway": "^2.1.4",
     "@apollo/server": "^4.0.4",
     "@emotion/react": "11.10.4",
     "@emotion/server": "11.10.0",
     "@emotion/styled": "11.10.4",
     "@nrwl/next": "14.8.3",
+    "chokidar": "^3.5.3",
     "core-js": "^3.6.5",
     "graphql": "^16.6.0",
     "next": "12.3.1",

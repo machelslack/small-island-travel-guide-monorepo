@@ -1,5 +1,5 @@
 {
-  "name": "small-island-travel-guide-api-bookings",
+  "name": "small-island-travel-guide-api-gateway",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,16 +13,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@apollo/server": "^4.0.4",
-    "@apollo/subgraph": "^2.1.4",
-    "@as-integrations/aws-lambda": "^1.0.1",
-    "graphql": "^16.6.0",
-    "graphql-tag": "^2.12.6"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.7",
-    "typescript": "^4.8.4"
-  }
+  "license": "ISC"
 }

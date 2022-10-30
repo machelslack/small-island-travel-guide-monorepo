@@ -1,26 +1,35 @@
 import { ApolloServer } from '@apollo/server';
 import { startServerAndCreateLambdaHandler } from '@as-integrations/aws-lambda';
-// The GraphQL schema
-const typeDefs = `
+const typeDefs = `#graphql
+  type Host {
+  id: ID!
+  name: String!
+  location: String!
+  phone: String
+  email: String!
+  }
+
   type Query {
-    hello: String
+    hosts: [Host]!
   }
 `;
-// A map of functions which return data for the schema.
+const hosts = [
+    {
+        id: 'host-1.0.0',
+        name: 'Sinopia Inn',
+        location: 'Portland, Jamaica, West Indies',
+        phone: '07395842452',
+        email: 'info@sinopiainn.com',
+    },
+];
 const resolvers = {
     Query: {
-        hello: () => 'world',
+        hosts: () => hosts,
     },
 };
 const server = new ApolloServer({
     typeDefs,
     resolvers,
 });
-// const {
-//   url,
-// } = async () =>
-//   await startStandaloneServer(server, {
-//     listen: { port: 4000 },
-//   });
 export const graphqlHandler = startServerAndCreateLambdaHandler(server);
 //# sourceMappingURL=server.js.map

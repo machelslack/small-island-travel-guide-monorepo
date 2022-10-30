@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/apollo-lambda-listings/dev/1667071834109-2022-10-29T19:30:34.109Z/apollo-lambda-listings.zip"
+          "S3Key": "serverless/apollo-lambda-listings/dev/1667117552773-2022-10-30T08:12:32.773Z/apollo-lambda-listings.zip"
         },
         "Handler": "src/server.graphqlHandler",
         "Runtime": "nodejs16.x",
