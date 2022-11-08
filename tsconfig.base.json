@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@small-island-travel-guide-monorepo/small-island-travel-guide-my-sql-database": [
+        "libs/small-island-travel-guide-my-sql-database/src/index.ts"
+      ],
+      "@small-island-travel-guide-monorepo/small-island-travel-guide-sqlite": [
+        "libs/small-island-travel-guide-sqlite/src/index.ts"
+      ],
       "@small-island-travel-guide-monorepo/small-island-travel-guide-terraform-modules": [
         "libs/small-island-travel-guide-terraform-modules/src/index.ts"
       ]

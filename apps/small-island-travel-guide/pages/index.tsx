@@ -1,11 +1,37 @@
 import styled from '@emotion/styled';
+import { gql } from '@apollo/client';
+import client from '../services/apollo/client';
 
 const StyledPage = styled.div`
   .page {
   }
 `;
 
-export function Index() {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query AvailabilityQuery {
+        hosts {
+          id
+          listings {
+            name
+            bookings {
+              listings
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      hosts: data.hosts,
+    },
+  };
+}
+
+export function Index({ hosts }) {
   /*
    * Replace the elements below with your own.
    *
@@ -21,6 +47,7 @@ export function Index() {
               Welcome small-island-travel-guide 👋
             </h1>
           </div>
+          <div>{JSON.stringify(hosts)}</div>
 
           <div id="hero" className="rounded">
             <div className="text-container">

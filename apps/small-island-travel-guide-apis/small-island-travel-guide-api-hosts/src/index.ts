@@ -26,7 +26,6 @@ const typeDefs = gql`
   type Host @key(fields: "id") {
     id: ID!
     name: String!
-    location: String!
     phone: String
     email: String!
   }

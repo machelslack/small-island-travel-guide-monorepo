@@ -1,14 +1,15 @@
 {
-  "extends": "../../../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "files": [],
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "./dist",
     "lib": ["es2020"],
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "types": ["node"]
+    "types": ["node","jest"]
   },
   "include": ["src"],
   "exclude": [
@@ -20,6 +21,8 @@
     "**/**/*.stories.tsx",
     "**.test.ts",
     "**.test.tsx",
+    "**.spec.ts",
+    "**.spec.tsx",
     "**.js"
-  ],
+  ]
 }

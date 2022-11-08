@@ -45,12 +45,13 @@ const resolvers = {
 const server = new ApolloServer({
     schema: buildSubgraphSchema({ typeDefs, resolvers }),
 });
-const url = async () => await startStandaloneServer(server, {
+const standAloneServer = await startStandaloneServer(server, {
     listen: { port: 4001 },
     context: async () => ({
         fetchHostById,
     }),
 });
+const url = async () => standAloneServer;
 url().then((response) => {
     console.log(`🚀  Server ready at: ${response.url}`);
 });

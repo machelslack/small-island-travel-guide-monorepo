@@ -9,7 +9,7 @@ const listings = [
         name: 'Room 1',
         description: 'this is a description',
         type: 'ENSUTIESINGLEBEDBEDROOM',
-        rate: 50.00
+        rate: 50.0,
     },
     {
         id: 'listing-2.0.0',
@@ -17,7 +17,7 @@ const listings = [
         name: 'Room 2',
         description: 'this is a description',
         type: 'ENSUTIESINGLEBEDBEDROOM',
-        rate: 100.00
+        rate: 100.0,
     },
 ];
 const fetchListingByHostId = (id) => {
@@ -64,12 +64,18 @@ const resolvers = {
     },
 };
 const server = new ApolloServer({
-    schema: buildSubgraphSchema({ typeDefs, resolvers }),
+    schema: buildSubgraphSchema({
+        typeDefs,
+        resolvers,
+    }),
 });
 const standAloneServer = await startStandaloneServer(server, {
     listen: { port: 4002 },
     context: async () => ({
         fetchListingByHostId,
+        // dataSources: () => ({
+        //   listingApi: new ListingserAPI({ database }),
+        // }),
     }),
 });
 const url = async () => standAloneServer;

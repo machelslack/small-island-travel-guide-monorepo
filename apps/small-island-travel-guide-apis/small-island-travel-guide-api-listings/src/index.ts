@@ -1,7 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { buildSubgraphSchema } from '@apollo/subgraph';
-import { gql } from 'graphql-tag';
+import { gql } from 'graphql-tag'
 
 const listings = [
   {
@@ -10,7 +10,7 @@ const listings = [
     name: 'Room 1',
     description: 'this is a description',
     type: 'ENSUTIESINGLEBEDBEDROOM',
-    rate: 50.00
+    rate: 50.0,
   },
   {
     id: 'listing-2.0.0',
@@ -18,7 +18,7 @@ const listings = [
     name: 'Room 2',
     description: 'this is a description',
     type: 'ENSUTIESINGLEBEDBEDROOM',
-    rate: 100.00
+    rate: 100.0,
   },
 ];
 
@@ -70,16 +70,23 @@ const resolvers = {
 
 interface MyContext {
   fetchListingByHostId?: any;
+  dataSources?: any;
 }
 
 const server = new ApolloServer<MyContext>({
-  schema: buildSubgraphSchema({ typeDefs, resolvers }),
+  schema: buildSubgraphSchema({
+    typeDefs,
+    resolvers,
+  }),
 });
 
 const standAloneServer = await startStandaloneServer(server, {
   listen: { port: 4002 },
   context: async () => ({
     fetchListingByHostId,
+    // dataSources: () => ({
+    //   listingApi: new ListingserAPI({ database }),
+    // }),
   }),
 });
 
